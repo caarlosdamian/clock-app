@@ -1,0 +1,44 @@
+.quote {
+  width: 324px;
+  .container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    gap: 16px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    .left {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: column;
+      gap: 8px;
+      min-width: 290px;
+      .header {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 22px;
+        display: flex;
+        color: #ffffff;
+      }
+      .subtitle {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 22px;
+        display: flex;
+        color: #ffffff;
+      }
+    }
+    .right {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      height: 100px;
+      .img {
+        align-self: flex-start;
+        cursor: pointer;
+      }
+    }
+  }
+}

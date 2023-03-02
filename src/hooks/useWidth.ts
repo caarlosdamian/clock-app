@@ -9,9 +9,11 @@ export const useWidth = () => {
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     window.addEventListener("mouseover", handleResize);
+    window.addEventListener("load", handleResize);
 
     return () => {
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("load", handleResize);
       window.removeEventListener("mouseover", handleResize);
     };
   }, []);
