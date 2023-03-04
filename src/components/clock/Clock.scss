@@ -1,3 +1,5 @@
+@import "../../common/index.scss";
+
 .aling-start {
   display: flex;
   align-items: flex-start;
@@ -23,6 +25,10 @@
       text-transform: uppercase;
       color: #ffffff;
       opacity: 0.5;
+      @include for-size("tablet-portrait-up") {
+        font-size: 18px;
+        line-height: 28px;
+      }
     }
   }
 
@@ -36,6 +42,11 @@
       line-height: 100px;
       letter-spacing: -2.5px;
       color: #ffffff;
+      @include for-size("tablet-portrait-up") {
+        font-size: 175px;
+        line-height: 175px;
+        letter-spacing: -4.375px;
+      }
     }
     &-subtitle {
       font-weight: 300;
@@ -43,6 +54,9 @@
       line-height: 28px;
       color: #ffffff;
       align-self: flex-end;
+      @include for-size("tablet-portrait-up") {
+        font-size: 32px;
+      }
     }
   }
 
@@ -55,6 +69,11 @@
       letter-spacing: 3px;
       text-transform: uppercase;
       color: #ffffff;
+      @include for-size("tablet-portrait-up") {
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: 3.6px;
+      }
     }
   }
 }
