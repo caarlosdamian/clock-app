@@ -121,3 +121,31 @@ export const deatilsKeys = [
     label: "Week number",
   },
 ];
+
+export interface QuoteI {
+  _id: string;
+  content: string;
+  author: string;
+  tags: string[];
+  authorSlug: string;
+  length: number;
+  dateAdded: string;
+  dateModified: string;
+}
+
+export interface QuoteInitI {
+  data: QuoteI;
+  quoteFetching: boolean;
+  isError: boolean;
+}
+
+export const QuoteInitstate = {
+  _id: "",
+  content: "",
+  author: "",
+  tags: [],
+  authorSlug: "",
+  length: 0,
+  dateAdded: "",
+  dateModified: "",
+};

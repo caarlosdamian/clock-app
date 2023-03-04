@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { QuoteInitI, QuoteInitstate } from "../../utils";
 import { fetchQuotable } from "../services/api";
 
-const initialState = {
-  data: [],
+const initialState: QuoteInitI = {
+  data: QuoteInitstate,
   quoteFetching: false,
   isError: false,
 };
