@@ -12,20 +12,13 @@ export const Quote = () => {
     await dispatch(fetchQuotable());
   };
   return (
-    <div className="quote">
-      <div className="container">
-        <div className="left">
-          <span className="header">{data?.content}</span>
-          <span className="subtitle">{data?.author}</span>
-        </div>
-        <div className="right">
-          <img
-            src={refresh}
-            alt="refresh"
-            className="img"
-            onClick={handleRefresh}
-          />
-        </div>
+    <div className="quote-container">
+      <div className="quote-container-left">
+        <span className="header">{data?.content}</span>
+        <span className="subtitle">{data?.author}</span>
+      </div>
+      <div className="quote-container-right" onClick={handleRefresh}>
+        <img src={refresh} alt="refresh" className="img" />
       </div>
     </div>
   );

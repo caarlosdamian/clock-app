@@ -14,6 +14,8 @@ interface UseBackground {
   bg: string;
   icon: string;
   label: string;
+  color: string;
+  day:boolean
 }
 
 export const useBackground = (dateTime: any): UseBackground => {
@@ -28,20 +30,52 @@ export const useBackground = (dateTime: any): UseBackground => {
       return {
         bg: bgDayMobile,
         icon: sun,
+        day: true,
         label: "GOOD MORNING",
+        color: "rgba(255, 255, 255, 0.75)",
       };
     } else if (screenWidth <= 768) {
-      return { bg: bgDayTable, icon: sun, label: "GOOD MORNING" };
+      return {
+        bg: bgDayTable,
+        icon: sun,
+        day: true,
+        label: "GOOD MORNING",
+        color: "rgba(255, 255, 255, 0.75)",
+      };
     } else {
-      return { bg: bgDayDesktop, icon: sun, label: "GOOD MORNING" };
+      return {
+        bg: bgDayDesktop,
+        icon: sun,
+        day: true,
+        label: "GOOD MORNING",
+        color: "rgba(255, 255, 255, 0.75)",
+      };
     }
   } else {
     if (screenWidth <= 375) {
-      return { bg: bgNigjtMobile, icon: moon, label: "GOOD EVENING" };
+      return {
+        bg: bgNigjtMobile,
+        icon: moon,
+        day: false,
+        label: "GOOD EVENING",
+        color: "rgba(0, 0, 0, 0.75)",
+      };
     } else if (screenWidth <= 768) {
-      return { bg: bgNigjtTable, icon: moon, label: "GOOD EVENING" };
+      return {
+        bg: bgNigjtTable,
+        icon: moon,
+        day: false,
+        label: "GOOD EVENING",
+        color: "rgba(0, 0, 0, 0.75)",
+      };
     } else {
-      return { bg: bgNigjtDesktop, icon: moon, label: "GOOD EVENING" };
+      return {
+        bg: bgNigjtDesktop,
+        icon: moon,
+        day: false,
+        label: "GOOD EVENING",
+        color: "rgba(0, 0, 0, 0.75)",
+      };
     }
   }
 };

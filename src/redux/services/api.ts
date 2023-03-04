@@ -7,13 +7,13 @@ export const fetchTime = createAsyncThunk("time/api", async () => {
   return data;
 });
 
-export const fetchTimeZones = createAsyncThunk("timeZone/api", async () => {
-  const response = await axios(
-    `https://api.ipbase.com/v2/info?apikey=${import.meta.env.VITE_API_KEY}`
-  );
-  const { data } = response;
-  return data.data;
-});
+// export const fetchTimeZones = createAsyncThunk("timeZone/api", async () => {
+//   const response = await axios(
+//     `https://api.ipbase.com/v2/info?apikey=${import.meta.env.VITE_API_KEY}`
+//   );
+//   const { data } = response;
+//   return data.data;
+// });
 
 export const fetchQuotable = createAsyncThunk("quote/api", async () => {
   const response = await axios("https://api.quotable.io/random");

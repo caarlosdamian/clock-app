@@ -1,8 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { TimeZonesliceInitState } from "../../common/interfaces";
+import { TimeZoneInitState } from "../../utils";
 import { fetchTimeZones } from "../services/api";
 
-const initialState = {
-  data: [],
+const initialState: TimeZonesliceInitState = {
+  data: TimeZoneInitState,
   timeZoneFetching: false,
   isError: false,
 };
