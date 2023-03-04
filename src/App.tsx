@@ -5,13 +5,13 @@ import { RootState } from "./redux/store";
 import { useBackground } from "./hooks/useBackground";
 import { Quote } from "./components/quote/Quote";
 import { Clock } from "./components/clock/Clock";
-import "./App.scss";
 import { Button } from "./components/button/Button";
 import { deatilsKeys } from "./utils";
+import "./App.scss";
 
 export const App = () => {
   const dispatch = useDispatch<any>();
-  const timeInfo = useSelector((state: RootState) => state.time.data);
+  const timeInfo: any = useSelector((state: RootState) => state.time.data);
   const { bg, color, day } = useBackground(timeInfo.datetime);
   const [show, setShow] = useState(false);
 
@@ -29,9 +29,11 @@ export const App = () => {
     <div className="app" style={{ backgroundImage: `url(${bg})` }}>
       <div className="overlay"></div>
       <div className="container">
-       {!show&& <div className="top">
-          <Quote />
-        </div>}
+        {!show && (
+          <div className="top">
+            <Quote />
+          </div>
+        )}
         <div className={`middle ${show ? "show" : ""}`}>
           <Clock />
           <Button
@@ -45,7 +47,7 @@ export const App = () => {
           className={`bottom ${show ? "show" : ""}`}
         >
           {deatilsKeys.map((item: any) => (
-            <div className="details">
+            <div key={item.id} className="details">
               <span
                 className="details-header"
                 style={{ color: !day ? "#FFFFFF" : "#303030" }}

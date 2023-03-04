@@ -1,3 +1,5 @@
+@import "../../common/index.scss";
+
 .quote-container {
   display: flex;
   flex-direction: row;
@@ -7,6 +9,15 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding: 40px 24px 0 24px;
+
+  @include for-size("tablet-portrait-up") {
+    padding: 80px 131px 64px 64px;
+    justify-content: space-between;
+  }
+  @include for-size("desktop-up") {
+    padding: 56px 165px;
+    justify-content: flex-start;
+  }
 
   &-left {
     display: flex;
@@ -21,6 +32,13 @@
       line-height: 22px;
       display: flex;
       color: #ffffff;
+      @include for-size("tablet-portrait-up") {
+        font-size: 18px;
+        line-height: 28px;
+      }
+      @include for-size("desktop-up") {
+        max-width: 552px;
+      }
     }
     .subtitle {
       font-weight: 700;
@@ -28,6 +46,11 @@
       line-height: 22px;
       display: flex;
       color: #ffffff;
+
+      @include for-size("tablet-portrait-up") {
+        font-size: 18px;
+        line-height: 28px;
+      }
     }
   }
   &-right {

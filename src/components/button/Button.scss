@@ -1,3 +1,5 @@
+@import "../../common/index.scss";
+
 .button {
   background: #ffffff;
   border-radius: 28px;
@@ -10,6 +12,12 @@
   min-width: 115px;
   transition: 0.5s all ease;
 
+  @include for-size("desktop-up") {
+    width: 146px;
+    height: 56px;
+    padding: 8px 8px 8px 21px;
+  }
+
   span {
     font-weight: 700;
     font-size: 12px;
@@ -21,6 +29,11 @@
     color: #000000;
     mix-blend-mode: normal;
     opacity: 0.5;
+    @include for-size("desktop-up") {
+      font-size: 16px;
+      letter-spacing: 5px;
+      line-height: 28px;
+    }
   }
   .button-icon {
     display: flex;
@@ -30,6 +43,14 @@
     height: 32px;
     background: #303030;
     border-radius: 50%;
+    cursor: pointer;
+    @include for-size("desktop-up") {
+      width: 40px;
+      height: 40px;
+    }
+    &:hover {
+      background: #999999;
+    }
 
     .button-icon-img {
       transition: 0.5s all ease;

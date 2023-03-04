@@ -59,16 +59,16 @@
         flex-direction: column;
         transition: 0.3s all ease;
         gap: 48px;
+
+        @include for-size("desktop-up") {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding: 98px 165px;
+        }
         &.show {
           padding-top: 100px;
           flex: 2;
-        }
-        &-button {
-          border: none;
-          padding: 10px;
-          background: white;
-          border-radius: 20px;
-          min-width: 100px;
         }
       }
       .bottom {
@@ -82,6 +82,7 @@
           min-height: 440px;
           padding: 119px 196px 119px 64px;
         }
+
         .details {
           display: flex;
           align-items: center;
@@ -116,6 +117,10 @@
             @include for-size("tablet-portrait-up") {
               font-size: 13px;
             }
+            @include for-size("desktop-up") {
+              font-size: 15px;
+              line-height: 28px;
+            }
           }
           &-subtitle {
             font-weight: 700;
@@ -131,6 +136,11 @@
               line-height: 48px;
               max-width: 322px;
             }
+            @include for-size("desktop-up") {
+              max-width: 423px;
+              font-size: 56px;
+              line-height: 68px;
+            }
           }
         }
         &.show {
@@ -145,6 +155,13 @@
             display: grid;
             grid-template-columns: repeat(2, 330px);
             gap: 48px;
+          }
+          @include for-size("desktop-up") {
+            align-items: center;
+            justify-content: center;
+            padding: 74px 165px;
+            column-gap: 200px;
+            grid-template-columns: repeat(2, 423px);
           }
         }
       }
