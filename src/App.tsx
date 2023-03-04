@@ -6,13 +6,14 @@ import "./App.scss";
 import { useWidth } from "./hooks/useWidth";
 import { useBackground } from "./hooks/useBackground";
 import { Quote } from "./components/quote/Quote";
+import { Clock } from "./components/clock/Clock";
 
 export const App = () => {
   const dispatch = useDispatch<any>();
   const { client_ip, datetime } = useSelector(
     (state: RootState) => state.time.data
   );
-  const backgrounImage = useBackground(datetime);
+  const { bg } = useBackground(datetime);
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -22,13 +23,13 @@ export const App = () => {
   }, []);
 
   return (
-    <div className="app" style={{ backgroundImage: `url(${backgrounImage})` }}>
+    <div className="app" style={{ backgroundImage: `url(${bg})` }}>
       <div className="container">
         <div className="top">
           <Quote />
         </div>
         <div className="middle" onClick={() => setShow(!show)}>
-          d
+          <Clock />
         </div>
         <div className={`bottom ${show ? "show" : ""}`}></div>
       </div>
