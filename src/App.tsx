@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchQuotable, fetchTime, fetchTimeZones } from "./redux/services/api";
+import { fetchLocation, fetchQuotable, fetchTime, fetchTimeZones } from "./redux/services/api";
 import { RootState } from "./redux/store";
-import "./App.scss";
-import { useWidth } from "./hooks/useWidth";
 import { useBackground } from "./hooks/useBackground";
 import { Quote } from "./components/quote/Quote";
 import { Clock } from "./components/clock/Clock";
+import "./App.scss";
 
 export const App = () => {
   const dispatch = useDispatch<any>();
@@ -20,6 +19,7 @@ export const App = () => {
     dispatch(fetchTime());
     dispatch(fetchTimeZones());
     dispatch(fetchQuotable());
+    dispatch(fetchLocation());
   }, []);
 
   return (

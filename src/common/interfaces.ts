@@ -21,3 +21,20 @@ export interface TimeSliceI {
   timeFetching: boolean;
   isError: boolean;
 }
+
+export interface Location {
+  country_code: string;
+  country_name: string;
+  city: string;
+  postal: string;
+  latitude: number;
+  longitude: number;
+  IPv4: string;
+  state: string;
+}
+
+export interface LocationsliceI {
+  locationFetching: boolean;
+  data: Location;
+  isError: boolean;
+}
