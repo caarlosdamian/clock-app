@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const fetchTime = createAsyncThunk("time/api", async () => {
-  const response = await axios("http://worldtimeapi.org/api/ip");
+  const response = await axios("https://worldtimeapi.org/api/ip");
   const { data } = response;
   return data;
 });
